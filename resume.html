@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이력서 사진 크기·용량 변환 - 3:4 비율 무료 JPG 변환</title>
+<meta name="description" content="이력서·채용 사이트 제출용 사진을 3:4 비율, 1MB 이하 JPG로 무료 변환하세요. 사진을 억지로 늘리거나 줄이지 않고 비율에 맞춰 자동으로 잘라줍니다.">
+<link rel="canonical" href="https://example.com/resume.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">사진규격변환</a>
+    <div class="nav-links">
+      <a href="passport.html">여권</a>
+      <a href="civil-exam.html">공무원원서</a>
+      <a href="resume.html" aria-current="page">이력서</a>
+      <a href="intl-license.html">국제운전면허증</a>
+      <a href="custom.html">직접입력</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>이력서 사진 크기·용량 변환</h1>
+  <p>이력서·채용 사이트 제출용 사진을 3:4 비율, 1MB 이하 JPG로 변환합니다. 사진을 억지로 늘리지 않고 비율에 맞춰 자동으로 자릅니다.</p>
+</header>
+
+<main>
+  <div class="spec-box">
+    <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
+    <div class="spec-readout">
+      <div class="spec-item"><span class="k">규격 (예시)</span><span class="v mono">300×400px</span></div>
+      <div class="spec-item"><span class="k">최대 용량</span><span class="v mono">1000KB</span></div>
+      <div class="spec-item"><span class="k">형식</span><span class="v mono">JPG</span></div>
+    </div>
+    <p class="spec-note">3:4 비율·1MB 이하 예시입니다. 채용 사이트·기업마다 업로드 제한이 다르므로 지원처 안내를 확인하세요.</p>
+  </div>
+
+  <div class="workspace">
+    <div class="panel">
+      <h2>사진 업로드</h2>
+      <div class="dropzone" id="dropzone">
+        <p><strong>클릭</strong>하거나 사진을 여기로 <strong>드래그</strong>하세요</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <div class="preview-wrap" id="previewWrap" style="display:none">
+        <img id="previewImg" alt="변환된 이력서 사진 미리보기">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>결과</h2>
+      <div class="result-row"><span class="label">원본 용량</span><span class="mono" id="origSize">—</span></div>
+      <div class="result-row"><span class="label">변환 후 용량</span><span class="mono" id="convSize">—</span></div>
+      <div class="result-row"><span class="label">판정</span><span id="statusBadge">—</span></div>
+      <button class="download-btn" id="downloadBtn" disabled>다운로드</button>
+      <p class="status-msg" id="statusMsg"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (애드센스 승인 후 표시)</div>
+
+  <article class="prose">
+    <h2>이력서 사진, 이것만은 피하세요</h2>
+    <p>채용 담당자들이 가장 자주 지적하는 문제는 사진을 억지로 늘리거나 줄여서 얼굴 비율이 이상해지는 경우입니다. 온라인 이력서 양식의 사진 칸 크기에 맞추려고 원본 사진을 세로나 가로만 눌러 넣으면 인상이 왜곡되어 보일 수 있습니다.</p>
+    <p>이 도구는 지정한 비율(기본 3:4)에 맞춰 사진의 중앙을 기준으로 자동으로 자르기 때문에, 억지로 늘리거나 찌그러뜨리지 않습니다.</p>
+
+    <h2>제출 전 확인할 것</h2>
+    <ul>
+      <li>배경이 깔끔한지 (단색 배경 권장)</li>
+      <li>과도한 보정이나 필터가 없는지</li>
+      <li>지원하는 회사·사이트의 파일 용량 제한을 별도로 확인했는지</li>
+    </ul>
+  </article>
+
+  <div class="related-tools">
+    <a href="passport.html">여권사진 변환 →</a>
+    <a href="civil-exam.html">공무원원서 사진 변환 →</a>
+    <a href="custom.html">규격 직접 입력 →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="privacy">사진 파일은 서버로 전송되지 않습니다. 모든 변환은 이 브라우저 안에서만 이루어집니다.</p>
+  <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
+  <nav><a href="index.html">전체 도구 보기</a></nav>
+</footer>
+
+<canvas id="workCanvas" style="display:none"></canvas>
+<script src="assets/converter.js"></script>
+<script>
+  window.PhotoConverter.init(() => ({
+    width: 300, height: 400, maxKB: 1000, format: 'image/jpeg', requireKB: false
+  }));
+</script>
+</body>
+</html>

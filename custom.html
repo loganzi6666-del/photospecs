@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사진 규격 직접 입력 변환 - 교육청·지자체 등 기관별 규격 맞춤</title>
+<meta name="description" content="교육청, 지자체, 개별 기관마다 다른 사진 규격(가로×세로 픽셀, 최대 용량 KB)을 직접 입력해서 무료로 변환하세요. JPG·PNG 모두 지원합니다.">
+<link rel="canonical" href="https://example.com/custom.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">사진규격변환</a>
+    <div class="nav-links">
+      <a href="passport.html">여권</a>
+      <a href="civil-exam.html">공무원원서</a>
+      <a href="resume.html">이력서</a>
+      <a href="intl-license.html">국제운전면허증</a>
+      <a href="custom.html" aria-current="page">직접입력</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>사진 규격 직접 입력해서 변환</h1>
+  <p>교육청·지자체·개별 기관은 규격이 각기 다릅니다. 공고문에 적힌 가로×세로(px)와 용량 제한(KB)을 입력하면 그대로 맞춰 변환합니다.</p>
+</header>
+
+<main>
+  <div class="spec-box">
+    <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
+    <div class="custom-inputs" id="customInputs" style="margin-top:0;padding-top:0;border-top:none">
+      <div class="field"><label for="cWidth">가로(px)</label><input type="number" id="cWidth" min="10" placeholder="예: 354"></div>
+      <div class="field"><label for="cHeight">세로(px)</label><input type="number" id="cHeight" min="10" placeholder="예: 472"></div>
+      <div class="field"><label for="cKb">최대 용량(KB)</label><input type="number" id="cKb" min="10" placeholder="예: 100"></div>
+      <div class="field"><label for="cFormat">형식</label>
+        <select id="cFormat">
+          <option value="image/jpeg">JPG</option>
+          <option value="image/png">PNG</option>
+        </select>
+      </div>
+    </div>
+    <p class="spec-note" style="margin-top:14px">인화용 규격(cm)이 아니라 온라인 업로드용 픽셀(px) 규격을 입력하세요. 가로·세로를 비워두면 원본 크기를 유지한 채 용량만 맞춥니다.</p>
+  </div>
+
+  <div class="workspace">
+    <div class="panel">
+      <h2>사진 업로드</h2>
+      <div class="dropzone" id="dropzone">
+        <p><strong>클릭</strong>하거나 사진을 여기로 <strong>드래그</strong>하세요</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <div class="preview-wrap" id="previewWrap" style="display:none">
+        <img id="previewImg" alt="변환된 사진 미리보기">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>결과</h2>
+      <div class="result-row"><span class="label">원본 용량</span><span class="mono" id="origSize">—</span></div>
+      <div class="result-row"><span class="label">변환 후 용량</span><span class="mono" id="convSize">—</span></div>
+      <div class="result-row"><span class="label">판정</span><span id="statusBadge">—</span></div>
+      <button class="download-btn" id="downloadBtn" disabled>다운로드</button>
+      <p class="status-msg" id="statusMsg"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (애드센스 승인 후 표시)</div>
+
+  <article class="prose">
+    <h2>교육청·지자체는 왜 표준 규격 페이지가 없나요</h2>
+    <p>여권이나 공무원 시험처럼 전국 공통 기준이 있는 경우와 달리, 각 시도교육청과 지자체 채용·모집 공고는 담당 부서마다 사진 규격을 따로 정하는 경우가 많습니다. 그래서 정확한 수치를 미리 정해두기보다, 공고문에 나온 값을 직접 입력해서 바로 맞추는 방식이 더 정확합니다.</p>
+
+    <h2>사용 방법</h2>
+    <ul>
+      <li>공고문에서 "사진 규격" 또는 "첨부파일 안내" 항목을 찾아 가로×세로(px)와 최대 용량(KB)을 확인하세요</li>
+      <li>cm 단위로만 안내되어 있다면, 접수 시스템의 업로드 화면 안내(대개 px 또는 KB로 표시됨)를 함께 확인하세요</li>
+      <li>값을 입력한 뒤 사진을 올리면 해당 규격에 맞춰 자동으로 변환됩니다</li>
+    </ul>
+  </article>
+
+  <div class="related-tools">
+    <a href="passport.html">여권사진 변환 →</a>
+    <a href="civil-exam.html">공무원원서 사진 변환 →</a>
+    <a href="resume.html">이력서 사진 변환 →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="privacy">사진 파일은 서버로 전송되지 않습니다. 모든 변환은 이 브라우저 안에서만 이루어집니다.</p>
+  <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
+  <nav><a href="index.html">전체 도구 보기</a></nav>
+</footer>
+
+<canvas id="workCanvas" style="display:none"></canvas>
+<script src="assets/converter.js"></script>
+<script>
+  window.PhotoConverter.init(() => {
+    const w = parseInt(document.getElementById('cWidth').value, 10);
+    const h = parseInt(document.getElementById('cHeight').value, 10);
+    const kb = parseInt(document.getElementById('cKb').value, 10);
+    return {
+      width: isNaN(w) ? null : w,
+      height: isNaN(h) ? null : h,
+      maxKB: isNaN(kb) ? null : kb,
+      format: document.getElementById('cFormat').value,
+      requireKB: true
+    };
+  });
+</script>
+</body>
+</html>

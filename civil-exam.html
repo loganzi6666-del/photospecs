@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공무원 시험 원서 사진 규격 변환 - 3:4 비율, 100KB 무료 JPG 변환</title>
+<meta name="description" content="공무원 시험 원서 접수용 사진을 3:4 비율, 100KB 이하 JPG로 무료 변환하세요. 시험별 규격이 다를 수 있어 직접 입력도 지원합니다.">
+<link rel="canonical" href="https://example.com/civil-exam.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">사진규격변환</a>
+    <div class="nav-links">
+      <a href="passport.html">여권</a>
+      <a href="civil-exam.html" aria-current="page">공무원원서</a>
+      <a href="resume.html">이력서</a>
+      <a href="intl-license.html">국제운전면허증</a>
+      <a href="custom.html">직접입력</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>공무원 시험 원서 사진 규격 변환</h1>
+  <p>원서 접수용 사진을 3:4 비율, 100KB 이하 JPG 예시 규격으로 변환합니다. 시험 공고의 정확한 기준으로도 바로 조정할 수 있습니다.</p>
+</header>
+
+<main>
+  <div class="spec-box">
+    <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
+    <div class="spec-readout">
+      <div class="spec-item"><span class="k">규격 (예시)</span><span class="v mono">354×472px</span></div>
+      <div class="spec-item"><span class="k">최대 용량</span><span class="v mono">100KB</span></div>
+      <div class="spec-item"><span class="k">형식</span><span class="v mono">JPG</span></div>
+    </div>
+    <p class="spec-note">3:4 비율·100KB 이하 예시입니다. 시험·기관마다 규격이 다르니 해당 시험 공고문의 사진 규정을 반드시 확인하세요. 규격이 다르다면 아래에서 직접 입력해 변환할 수 있습니다.</p>
+    <div class="custom-inputs" id="customInputs">
+      <div class="field"><label for="cWidth">가로(px)</label><input type="number" id="cWidth" min="10" value="354"></div>
+      <div class="field"><label for="cHeight">세로(px)</label><input type="number" id="cHeight" min="10" value="472"></div>
+      <div class="field"><label for="cKb">최대 용량(KB)</label><input type="number" id="cKb" min="10" value="100"></div>
+    </div>
+  </div>
+
+  <div class="workspace">
+    <div class="panel">
+      <h2>사진 업로드</h2>
+      <div class="dropzone" id="dropzone">
+        <p><strong>클릭</strong>하거나 사진을 여기로 <strong>드래그</strong>하세요</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <div class="preview-wrap" id="previewWrap" style="display:none">
+        <img id="previewImg" alt="변환된 원서 사진 미리보기">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>결과</h2>
+      <div class="result-row"><span class="label">원본 용량</span><span class="mono" id="origSize">—</span></div>
+      <div class="result-row"><span class="label">변환 후 용량</span><span class="mono" id="convSize">—</span></div>
+      <div class="result-row"><span class="label">판정</span><span id="statusBadge">—</span></div>
+      <button class="download-btn" id="downloadBtn" disabled>다운로드</button>
+      <p class="status-msg" id="statusMsg"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (애드센스 승인 후 표시)</div>
+
+  <article class="prose">
+    <h2>시험마다 규격이 다른 이유</h2>
+    <p>공무원 시험은 국가직·지방직·직렬별로 접수처가 다르고, 사이버국가고시센터 외에도 각 지자체나 기관이 자체 접수 시스템을 쓰는 경우가 많습니다. 그래서 사진 규격도 시험 공고문마다 조금씩 다르게 안내됩니다.</p>
+    <p>위 기본값은 흔히 쓰이는 3:4 비율과 100KB 기준으로 맞춰뒀지만, 공고문에 다른 수치가 적혀 있다면 입력창에서 직접 바꿔서 변환하면 됩니다.</p>
+
+    <h2>자주 겪는 문제</h2>
+    <ul>
+      <li>용량 제한이 너무 작아 압축하면 얼굴이 흐려지는 문제 → 원본 해상도가 낮으면 더 심해지므로, 가능하면 고화질 원본에서 변환하세요</li>
+      <li>비율이 안 맞아 얼굴이 잘리거나 늘어나는 문제 → 이 도구는 지정한 비율에 맞춰 중앙을 기준으로 자동 크롭합니다</li>
+    </ul>
+  </article>
+
+  <div class="related-tools">
+    <a href="passport.html">여권사진 변환 →</a>
+    <a href="resume.html">이력서 사진 변환 →</a>
+    <a href="custom.html">규격 직접 입력 →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="privacy">사진 파일은 서버로 전송되지 않습니다. 모든 변환은 이 브라우저 안에서만 이루어집니다.</p>
+  <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
+  <nav><a href="index.html">전체 도구 보기</a></nav>
+</footer>
+
+<canvas id="workCanvas" style="display:none"></canvas>
+<script src="assets/converter.js"></script>
+<script>
+  window.PhotoConverter.init(() => ({
+    width: parseInt(document.getElementById('cWidth').value, 10) || 354,
+    height: parseInt(document.getElementById('cHeight').value, 10) || 472,
+    maxKB: parseInt(document.getElementById('cKb').value, 10) || 100,
+    format: 'image/jpeg',
+    requireKB: false
+  }));
+</script>
+</body>
+</html>

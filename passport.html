@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>여권사진 규격 변환 - 413×531px, 500KB 이하 무료 JPG 변환</title>
+<meta name="description" content="여권 재발급 온라인 신청용 사진을 413×531px, 500KB 이하 JPG로 무료 변환하세요. 설치·회원가입 없이 브라우저에서 바로 처리되며 서버로 전송되지 않습니다.">
+<link rel="canonical" href="https://example.com/passport.html">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "여권사진 온라인 제출 규격은 어떻게 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "가로 413px, 세로 531px 권장이며, 실제 허용 범위는 가로 395~431px, 세로 507~550px입니다. 용량은 500KB 이하 JPG 파일이어야 합니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "jpeg 확장자는 왜 업로드가 안 되나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "일부 신청 화면은 jpg, png만 허용하고 jpeg 확장자는 인식하지 못합니다. 아이폰 기본 저장 형식이 jpeg인 경우가 많아 이 문제가 자주 발생합니다. 이 도구로 변환하면 자동으로 jpg로 저장됩니다." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">사진규격변환</a>
+    <div class="nav-links">
+      <a href="passport.html" aria-current="page">여권</a>
+      <a href="civil-exam.html">공무원원서</a>
+      <a href="resume.html">이력서</a>
+      <a href="intl-license.html">국제운전면허증</a>
+      <a href="custom.html">직접입력</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>여권사진 규격 변환</h1>
+  <p>여권 재발급 온라인 신청용 사진을 413×531px, 500KB 이하 JPG로 바로 변환합니다.</p>
+</header>
+
+<main>
+  <div class="spec-box">
+    <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
+    <div class="spec-readout">
+      <div class="spec-item"><span class="k">규격</span><span class="v mono">413×531px</span></div>
+      <div class="spec-item"><span class="k">최대 용량</span><span class="v mono">500KB</span></div>
+      <div class="spec-item"><span class="k">형식</span><span class="v mono">JPG</span></div>
+    </div>
+    <p class="spec-note">외교부 온라인 여권 재발급 기준(413×531px 권장, 실제 허용범위 가로 395~431px·세로 507~550px, 500KB 이하 JPG). 제출 전 외교부 공지를 다시 확인하세요.</p>
+  </div>
+
+  <div class="workspace">
+    <div class="panel">
+      <h2>사진 업로드</h2>
+      <div class="dropzone" id="dropzone">
+        <p><strong>클릭</strong>하거나 사진을 여기로 <strong>드래그</strong>하세요</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <div class="preview-wrap" id="previewWrap" style="display:none">
+        <img id="previewImg" alt="변환된 여권사진 미리보기">
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>결과</h2>
+      <div class="result-row"><span class="label">원본 용량</span><span class="mono" id="origSize">—</span></div>
+      <div class="result-row"><span class="label">변환 후 용량</span><span class="mono" id="convSize">—</span></div>
+      <div class="result-row"><span class="label">판정</span><span id="statusBadge">—</span></div>
+      <button class="download-btn" id="downloadBtn" disabled>다운로드</button>
+      <p class="status-msg" id="statusMsg"></p>
+    </div>
+  </div>
+
+  <div class="ad-slot">광고 영역 (애드센스 승인 후 표시)</div>
+
+  <article class="prose">
+    <h2>여권사진, 왜 자꾸 반려되나요</h2>
+    <p>여권 온라인 재발급 신청에서 가장 흔한 반려 사유는 용량 초과와 확장자 오류입니다. 스마트폰 사진은 보통 3~5MB 이상이라 500KB 기준을 훌쩍 넘고, 아이폰의 기본 저장 형식인 jpeg는 일부 신청 화면에서 jpg로 인식되지 않아 업로드 자체가 막히기도 합니다.</p>
+    <p>또한 용량을 억지로 줄이려고 압축률을 과하게 높이면 얼굴 윤곽이 뭉개지거나 픽셀이 깨져서, 파일은 통과했지만 실제 심사에서 반려되는 경우도 있습니다. 이 도구는 500KB 이하를 만족하는 선에서 가장 높은 화질을 자동으로 찾습니다.</p>
+
+    <h2>제출 전 확인할 것</h2>
+    <ul>
+      <li>최근 6개월 이내 촬영한 사진인지</li>
+      <li>배경이 흰색 또는 무지 배경인지</li>
+      <li>양쪽 눈썹이 가려지지 않았는지</li>
+      <li>최종 파일 확장자가 .jpg 또는 .jpeg로 표시되는지</li>
+    </ul>
+  </article>
+
+  <div class="related-tools">
+    <a href="civil-exam.html">공무원원서 사진 변환 →</a>
+    <a href="intl-license.html">국제운전면허증 사진 변환 →</a>
+    <a href="resume.html">이력서 사진 변환 →</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p class="privacy">사진 파일은 서버로 전송되지 않습니다. 모든 변환은 이 브라우저 안에서만 이루어집니다.</p>
+  <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
+  <nav><a href="index.html">전체 도구 보기</a></nav>
+</footer>
+
+<canvas id="workCanvas" style="display:none"></canvas>
+<script src="assets/converter.js"></script>
+<script>
+  window.PhotoConverter.init(() => ({
+    width: 413, height: 531, maxKB: 500, format: 'image/jpeg', requireKB: false
+  }));
+</script>
+</body>
+</html>
