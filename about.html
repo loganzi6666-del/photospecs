@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사이트 소개 및 문의 | 사진규격변환</title>
+<meta name="description" content="사진규격변환(photospecs.com)을 만든 이유와 동작 방식, 규격 정보의 출처, 문의 방법을 안내합니다.">
+<link rel="canonical" href="https://photospecs.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="사진규격변환">
+<meta property="og:title" content="사이트 소개 및 문의 | 사진규격변환">
+<meta property="og:description" content="사진규격변환(photospecs.com)을 만든 이유와 동작 방식, 규격 정보의 출처, 문의 방법을 안내합니다.">
+<meta property="og:url" content="https://photospecs.com/about.html">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">사진규격변환</a>
+    <div class="nav-links">
+      <a href="passport.html">여권</a>
+      <a href="civil-exam.html">공무원원서</a>
+      <a href="resume.html">이력서</a>
+      <a href="intl-license.html">국제운전면허증</a>
+      <a href="us-visa.html">미국비자</a>
+      <a href="custom.html">직접입력</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <h1>사이트 소개 및 문의</h1>
+  <p>여권 재발급 신청에서 사진 용량 때문에 세 번 막히고 나서 만든 사이트입니다.</p>
+</header>
+
+<main>
+  <article class="prose">
+    <h2>왜 만들었나</h2>
+    <p>여권을 재발급받으려고 외교부 온라인 신청 화면에 사진을 올리다가, "첨부 파일 용량을 초과했습니다"라는 문구를 세 번 보고 나서 이 사이트를 만들기 시작했습니다. 스마트폰으로 찍은 사진은 보통 3~5MB인데 기관이 요구하는 것은 500KB 이하입니다. 그 사이를 메우려고 압축 프로그램을 받고, 픽셀 수를 계산하고, 다시 용량을 확인하는 과정이 생각보다 번거로웠습니다.</p>
+    <p>이미 비슷한 서비스가 없는 것은 아니었습니다. 다만 대부분 해외 서비스라 한국 기관의 구체적인 접수 화면 사정을 모르거나, 결제를 요구하거나, 사진을 서버로 올려야 했습니다. 증명사진은 얼굴이 그대로 담긴 파일입니다. 그걸 모르는 서버에 올리고 싶지 않았습니다.</p>
+
+    <h2>어떻게 동작하나</h2>
+    <p>이 사이트의 모든 변환 도구는 이용자의 웹브라우저 안에서만 동작합니다. 이미지 처리는 브라우저에 내장된 Canvas API가 담당하고, 파일은 어떤 서버로도 전송되지 않습니다. 개발자인 저조차 이용자가 무슨 사진을 변환했는지 알 수 없습니다.</p>
+    <p>용량을 맞추는 방식도 조금 신경을 썼습니다. 단순히 압축률을 고정하면 어떤 사진은 기준을 못 맞추고 어떤 사진은 필요 이상으로 뭉개집니다. 그래서 목표 용량 이하를 만족하는 선에서 가장 높은 화질이 나오는 압축률을 자동으로 찾도록 만들었습니다.</p>
+
+    <h2>규격 정보는 어디서 가져오나</h2>
+    <p>각 도구 페이지에 적힌 규격은 해당 기관이 공개한 안내문과 실제 접수 화면을 확인해 정리한 것입니다. 다만 기관 규격은 공고 없이 바뀌는 일이 잦습니다. 그래서 각 페이지 하단에 정보를 확인한 시점을 함께 적어 두었고, 제출 전에 기관의 최신 공고를 다시 확인하시기를 권하고 있습니다.</p>
+    <p>규격이 바뀐 것을 발견하셨다면 알려주십시오. 확인 후 반영하겠습니다.</p>
+
+    <h2>문의</h2>
+    <p>오류 제보, 규격 변경 안내, 새로 추가했으면 하는 규격에 대한 요청은 아래 주소로 보내주시면 확인하겠습니다.</p>
+    <p><strong>이메일: flyhong3@naver.com</strong></p>
+    <p>운영: 개인 운영 사이트입니다. 사업자 등록이 되어 있지 않으며 광고 수익 외의 영리 활동을 하지 않습니다.</p>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <p class="privacy">사진 파일은 서버로 전송되지 않습니다. 모든 변환은 이 브라우저 안에서만 이루어집니다.</p>
+  <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
+  <nav>
+    <a href="index.html">전체 도구 보기</a>
+    <a href="about.html">사이트 소개·문의</a>
+    <a href="privacy.html">개인정보처리방침</a>
+    <a href="terms.html">이용약관</a>
+  </nav>
+</footer>
+
+</body>
+</html>
