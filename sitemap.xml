@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/</loc></url>
-  <url><loc>https://example.com/passport.html</loc></url>
-  <url><loc>https://example.com/civil-exam.html</loc></url>
-  <url><loc>https://example.com/resume.html</loc></url>
-  <url><loc>https://example.com/intl-license.html</loc></url>
-  <url><loc>https://example.com/custom.html</loc></url>
-    <url><loc>https://example.com/us-visa.html</loc></url>
+  <url><loc>https://photospecs.com/</loc></url>
+  <url><loc>https://photospecs.com/passport.html</loc></url>
+  <url><loc>https://photospecs.com/civil-exam.html</loc></url>
+  <url><loc>https://photospecs.com/resume.html</loc></url>
+  <url><loc>https://photospecs.com/intl-license.html</loc></url>
+  <url><loc>https://photospecs.com/custom.html</loc></url>
+    <url><loc>https://photospecs.com/us-visa.html</loc></url>
 </urlset>
