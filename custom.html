@@ -14,9 +14,43 @@
 <link rel="stylesheet" href="assets/style.css">
 <style>
 .trust-banner{margin:0 0 22px;padding:14px 16px;background:var(--accent-soft);border:1px solid var(--accent);border-left-width:4px;border-radius:6px}
-.trust-banner strong{display:block;color:var(--accent);font-size:15.5px;font-weight:700;margin-bottom:4px;letter-spacing:-0.01em}
-.trust-banner p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.55}
+.trust-banner strong{display:block;color:var(--accent);font-size:15.5px;font-weight:700;margin-bottom:6px;letter-spacing:-0.01em}
+.trust-banner p{margin:0;font-size:14px;color:var(--ink-soft);line-height:1.6}
+.trust-banner p + p{margin-top:8px}
+.prose table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+.prose th,.prose td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+.prose th{background:var(--paper);font-weight:600;font-size:13px;color:var(--ink-soft)}
+.prose ol{font-size:14.5px;color:var(--ink-soft);padding-left:20px}
+.prose ol li{margin-bottom:6px}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "센티미터 규격을 픽셀로 어떻게 바꾸나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "픽셀 = 밀리미터 ÷ 25.4 × dpi 입니다. 3.5×4.5cm를 300dpi로 바꾸면 413×531px가 됩니다. 기관이 dpi를 지정하지 않았다면 300dpi로 계산하시면 대개 맞습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "반명함과 여권 규격은 어떻게 다른가요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "반명함은 3×4cm로 이력서와 자격증에 쓰이고, 여권 규격은 3.5×4.5cm로 여권·주민등록증·운전면허증에 쓰입니다. 흔히 증명사진이라 부르는 것은 대부분 반명함을 가리킵니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "기관이 요구하는 규격을 모를 때는 어떻게 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "공고문을 먼저 확인하고, 없으면 실제 접수 화면의 파일 선택 버튼 주변 안내를 봅니다. 그래도 없으면 파일을 한 번 올려보면 오류 문구에 허용 규격이 숫자로 표시되는 경우가 많습니다." }
+    },
+    {
+      "@type": "Question",
+      "name": "JPG와 PNG 중 무엇으로 저장해야 하나요?",
+      "acceptedAnswer": { "@type": "Answer", "text": "기관이 지정하지 않았다면 JPG를 권합니다. 사진처럼 색이 부드럽게 이어지는 이미지에서는 같은 용량으로 더 좋은 화질이 나옵니다. PNG는 용량 제한이 넉넉하거나 기관이 요구할 때 쓰십시오." }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -58,7 +92,8 @@
 
   <div class="trust-banner">
     <strong>사진파일은 서버로 전송되지 않습니다.</strong>
-    <p>업로드한 이미지는 이 브라우저 안에서만 처리되며, 저희 서버를 포함해 어디에도 저장되거나 전송되지 않습니다. 회원가입도 필요 없습니다.</p>
+    <p>업로드한 이미지는 이 브라우저 안에서만 처리되며, 저희 서버를 포함해 어디에도 저장되거나 전송되지 않습니다.</p>
+    <p>회원가입도 필요 없습니다.</p>
   </div>
 
   <div class="workspace">
@@ -86,15 +121,43 @@
   <div class="ad-slot">광고 영역 (애드센스 승인 후 표시)</div>
 
   <article class="prose">
-    <h2>교육청·지자체는 왜 표준 규격 페이지가 없나요</h2>
-    <p>여권이나 공무원 시험처럼 전국 공통 기준이 있는 경우와 달리, 각 시도교육청과 지자체 채용·모집 공고는 담당 부서마다 사진 규격을 따로 정하는 경우가 많습니다. 그래서 정확한 수치를 미리 정해두기보다, 공고문에 나온 값을 직접 입력해서 바로 맞추는 방식이 더 정확합니다.</p>
+    <h2>규격을 모를 때 확인하는 순서</h2>
+    <p>제출할 곳이 요구하는 규격은 기관마다, 심지어 같은 기관이라도 공고마다 다릅니다. 순서대로 확인하시면 대부분 찾을 수 있습니다.</p>
+    <ol>
+      <li><strong>공고문이나 안내문</strong>을 먼저 봅니다. "사진(3.5×4.5cm)", "500KB 이하 jpg" 같은 표기가 대개 여기 있습니다.</li>
+      <li>공고에 없으면 <strong>실제 접수 화면</strong>을 엽니다. 파일 선택 버튼 옆이나 아래에 작은 글씨로 제한이 적혀 있는 경우가 많습니다.</li>
+      <li>그래도 없으면 <strong>파일을 한 번 올려봅니다.</strong> 규격이 안 맞으면 대부분 "가로 OOO 픽셀 이하" 같은 오류 문구가 나오는데, 그 숫자가 곧 규격입니다.</li>
+    </ol>
+    <p>픽셀이 아니라 센티미터로만 적혀 있다면 아래 표에서 환산값을 찾으시면 됩니다.</p>
 
-    <h2>사용 방법</h2>
-    <ul>
-      <li>공고문에서 "사진 규격" 또는 "첨부파일 안내" 항목을 찾아 가로×세로(px)와 최대 용량(KB)을 확인하세요</li>
-      <li>cm 단위로만 안내되어 있다면, 접수 시스템의 업로드 화면 안내(대개 px 또는 KB로 표시됨)를 함께 확인하세요</li>
-      <li>값을 입력한 뒤 사진을 올리면 해당 규격에 맞춰 자동으로 변환됩니다</li>
-    </ul>
+    <h2>국내 주요 증명사진 규격</h2>
+    <p>인화 크기와, 온라인 제출에 흔히 쓰이는 300dpi 기준 픽셀 환산값입니다.</p>
+    <table>
+      <thead>
+        <tr><th>용도</th><th>인화 크기</th><th>300dpi 픽셀</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>여권·주민등록증·운전면허증</td><td>3.5 × 4.5cm</td><td class="mono">413 × 531px</td></tr>
+        <tr><td>이력서·자격증 (반명함)</td><td>3.0 × 4.0cm</td><td class="mono">354 × 472px</td></tr>
+        <tr><td>공무원증·교원자격증 (명함판)</td><td>5.0 × 7.0cm</td><td class="mono">590 × 827px</td></tr>
+        <tr><td>구형 증명사진</td><td>2.5 × 3.0cm</td><td class="mono">295 × 354px</td></tr>
+      </tbody>
+    </table>
+    <p>흔히 "증명사진"이라고 부르는 것은 요즘 대부분 반명함(3×4cm)을 가리킵니다. 2.5×3cm는 사실상 쓰이지 않는 옛 규격입니다. 수능 원서, 운전면허 시험, 청소년증처럼 신분 확인이 목적인 서류는 대체로 여권과 같은 3.5×4.5cm를 씁니다.</p>
+
+    <h2>센티미터를 픽셀로 바꾸는 법</h2>
+    <p>계산식은 간단합니다. <strong>픽셀 = 밀리미터 ÷ 25.4 × dpi</strong> 입니다. 1인치가 25.4mm이기 때문입니다.</p>
+    <p>예를 들어 3.5×4.5cm를 300dpi로 바꾸면 가로는 35 ÷ 25.4 × 300 = 413.4이므로 413px, 세로는 45 ÷ 25.4 × 300 = 531.5이므로 531px가 됩니다. 여권 규격이 413×531px인 이유가 이것입니다.</p>
+    <p>기관이 dpi를 따로 말하지 않았다면 300dpi로 잡으시면 대개 맞습니다. 온라인 제출용 표준처럼 쓰이는 값입니다. 다만 소수점이 나오면 반올림 때문에 1px 차이가 생길 수 있는데, 대부분의 기관은 약간의 허용 범위를 두고 있어 문제되지 않습니다.</p>
+
+    <h2>용량(KB) 제한이 걸리는 이유</h2>
+    <p>픽셀 크기를 맞췄는데도 막힌다면 파일 용량 때문일 가능성이 큽니다. 접수 시스템은 수만 건의 파일을 보관해야 하므로 보통 100KB에서 500KB 사이로 상한을 둡니다. 스마트폰 원본 사진은 3~5MB가 보통이라 그대로는 통과하지 못합니다.</p>
+    <p>이때 압축률을 무작정 높이면 얼굴 윤곽이 뭉개지고, 파일은 올라갔는데 심사에서 반려되는 일이 생깁니다. 이 페이지의 도구는 입력하신 목표 용량을 넘지 않는 선에서 가장 높은 화질이 나오는 압축률을 자동으로 찾습니다.</p>
+
+    <h2>JPG와 PNG 중 무엇을 고를까</h2>
+    <p>기관이 형식을 지정했다면 그대로 따르시면 됩니다. 지정이 없다면 <strong>JPG를 권합니다.</strong> 사진처럼 색이 부드럽게 이어지는 이미지에서는 JPG가 같은 용량으로 더 좋은 화질을 냅니다.</p>
+    <p>PNG는 용량 제한이 없거나 넉넉할 때, 또는 기관이 PNG를 요구할 때만 쓰시는 편이 낫습니다. PNG는 압축 방식이 달라 용량을 목표치까지 줄이기 어려울 수 있습니다.</p>
+    <p>규격은 기관과 공고마다 다르고 예고 없이 바뀝니다. 이 표는 일반적인 기준이니, 제출 전에는 반드시 해당 기관의 최신 안내를 직접 확인하세요.</p>
   </article>
 
   <div class="related-tools">
