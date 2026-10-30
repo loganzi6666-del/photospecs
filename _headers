@@ -1,0 +1,11 @@
+# 보안 헤더 — 이 파일 자체는 공개되지 않음
+# X-Frame-Options/CSP는 애드센스(자동광고 미리보기·광고 스크립트)와 충돌할 수 있어 넣지 않음
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), usb=(), magnetometer=(), gyroscope=()
+  Strict-Transport-Security: max-age=31536000
+
+# workers.dev 주소가 검색결과에 중복으로 잡히지 않게
+https://:version.:subdomain.workers.dev/*
+  X-Robots-Tag: noindex

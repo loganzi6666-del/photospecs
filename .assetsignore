@@ -1,0 +1,12 @@
+# 배포 시 공개 업로드에서 제외할 파일 (gitignore 문법)
+.git
+.git/
+.github/
+.assetsignore
+.gitignore
+README.txt
+wrangler.jsonc
+wrangler.toml
+ads.txt.example
+*.md
+*.example
