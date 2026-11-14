@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이력서 사진 크기·용량 변환 - 3:4 비율 무료 JPG 변환</title>
+<title>이력서 사진 크기 변환 - 사람인·잡코리아·인크루트 권장 크기 (2026)</title>
 <meta name="description" content="이력서·자기소개서용 증명사진을 규격에 맞게 무료 변환합니다. 서버 전송 없이 브라우저에서 바로 처리됩니다.">
 <link rel="canonical" href="https://photospecs.com/resume">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="사진규격변환">
-<meta property="og:title" content="이력서 사진 크기·용량 변환 - 3:4 비율 무료 JPG 변환">
-<meta property="og:description" content="이력서·채용 사이트 제출용 사진을 3:4 비율, 1MB 이하 JPG로 무료 변환하세요.">
+<meta property="og:title" content="이력서 사진 크기 변환 - 사람인·잡코리아·인크루트 권장 크기 (2026)">
+<meta property="og:description" content="사람인 100×140, 잡코리아 103×132, 인크루트 150×220 — 채용 사이트별 권장 크기로 이력서 사진을 무료 변환합니다.">
 <meta property="og:url" content="https://photospecs.com/resume">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
@@ -57,18 +57,32 @@
 
 <header class="page-head">
   <h1>이력서 사진 크기·용량 변환</h1>
-  <p>이력서·채용 사이트 제출용 사진을 3:4 비율, 1MB 이하 JPG로 변환합니다. 사진을 억지로 늘리지 않고 비율에 맞춰 자동으로 자릅니다.</p>
+  <p>사람인·잡코리아·인크루트 권장 크기에 맞춰 이력서 사진을 JPG로 변환합니다. 사진을 억지로 늘리지 않고 비율에 맞춰 자동으로 자릅니다.</p>
 </header>
 
 <main>
   <div class="spec-box">
     <span class="corner-tl"></span><span class="corner-tr"></span><span class="corner-bl"></span><span class="corner-br"></span>
     <div class="spec-readout">
-      <div class="spec-item"><span class="k">규격 (예시)</span><span class="v mono">300×400px</span></div>
-      <div class="spec-item"><span class="k">최대 용량</span><span class="v mono">1000KB</span></div>
+      <div class="spec-item"><span class="k">규격</span><span class="v mono" id="rSize">100×140px</span></div>
+      <div class="spec-item"><span class="k">최대 용량</span><span class="v mono" id="rKb">1000KB</span></div>
       <div class="spec-item"><span class="k">형식</span><span class="v mono">JPG</span></div>
     </div>
-    <p class="spec-note">3:4 비율·1MB 이하 예시입니다. 채용 사이트·기업마다 업로드 제한이 다르므로 지원처 안내를 확인하세요.</p>
+    <p class="spec-note" id="rNote"></p>
+    <div class="custom-inputs">
+      <div class="field"><label for="preset">지원하는 곳</label><select id="preset" style="width:auto;min-width:240px">
+        <option value="saramin" data-w="100" data-h="140" data-kb="1000" data-note="사람인 고객센터 기준: 권장 100×140px(5:7), jpg·gif, 10MB까지. 여유 있게 1MB 이하로 맞춥니다." selected>사람인</option>
+        <option value="jobkorea" data-w="103" data-h="132" data-kb="1000" data-note="잡코리아 사진 도구 기준: 103×132px, 1MB 이내. 고객센터 FAQ는 150×210px 이하를 안내하므로 두 기준을 모두 만족합니다.">잡코리아</option>
+        <option value="incruit" data-w="150" data-h="220" data-kb="1000" data-note="인크루트 사진 편집기 기준: 이력서 권장 150×220px.">인크루트</option>
+        <option value="print" data-w="354" data-h="472" data-kb="1000" data-note="반명함 3×4cm를 300dpi로 환산한 354×472px입니다. 회사 자체 지원 페이지에 별도 안내가 없을 때 무난합니다.">반명함 3×4cm (회사 자체 양식·인화용)</option>
+        <option value="custom" data-w="0" data-h="0" data-kb="0" data-note="지원처가 안내한 픽셀과 용량을 아래에 넣으세요. 바꾼 뒤에는 사진을 다시 올리면 새 규격으로 변환됩니다.">직접 입력</option>
+      </select></div>
+    </div>
+    <div class="custom-inputs" id="customInputs" style="display:none">
+      <div class="field"><label for="cWidth">가로(px)</label><input type="number" id="cWidth" min="10" value="354"></div>
+      <div class="field"><label for="cHeight">세로(px)</label><input type="number" id="cHeight" min="10" value="472"></div>
+      <div class="field"><label for="cKb">최대 용량(KB)</label><input type="number" id="cKb" min="10" value="1000"></div>
+    </div>
   </div>
 
   <div class="trust-banner">
@@ -110,12 +124,22 @@
     <p>비율이 다른 사진을 올리면 사이트가 알아서 잘라내거나 양옆에 여백을 넣습니다. 그 과정에서 머리 윗부분이 잘리거나 얼굴이 한쪽으로 치우쳐 보이는 일이 생깁니다. 지원 사이트가 권장 크기를 알려준다면 그 비율에 맞춰 미리 변환해 올리시는 편이 결과가 깔끔합니다.</p>
     <p>형식도 걸림돌입니다. 사람인처럼 jpg와 gif만 받는 곳에서는 png가 올라가지 않습니다. 아이폰 기본 저장 형식인 HEIC는 말할 것도 없습니다. 사진관에서 받은 파일이나 화면 캡처는 png인 경우가 많으니 확장자를 먼저 확인하세요.</p>
 
+    <h2>채용 사이트별 권장 크기 (2026년 11월 확인)</h2>
+    <p>각 사이트의 공식 고객센터와 사진 도구를 직접 확인한 값입니다. 위쪽에서 지원하는 곳을 고르면 이 크기로 맞춰 드립니다.</p>
+    <ul>
+      <li><strong>사람인</strong>: 권장 100×140픽셀, jpg·gif, 10MB까지. png는 받지 않습니다. 픽셀이 크면 자동으로 회전돼 등록될 수 있다고 안내합니다.</li>
+      <li><strong>잡코리아</strong>: 사진 도구는 103×132픽셀, 1MB 이내를 안내하고, 고객센터 FAQ는 150×210픽셀을 넘으면 등록되지 않는다고 적고 있습니다. 103×132로 맞추면 두 기준을 모두 만족합니다.</li>
+      <li><strong>인크루트</strong>: 이력서 권장 150×220픽셀입니다. 크기를 바꿀 때 가로세로 비율을 유지해야 사진이 깨지지 않는다고 안내합니다.</li>
+      <li><strong>원티드</strong>: 이력서 사진 규격을 따로 공개하지 않습니다.</li>
+    </ul>
+    <p>세 사이트의 권장 크기가 모두 다르고 비율도 5:7, 약 4:5, 약 2:3으로 제각각입니다. 한 파일로 여러 사이트에 올리면 어딘가에서는 잘리거나 여백이 생깁니다. 세 곳이 공통으로 받는 형식은 jpg뿐입니다.</p>
+
     <h2>인화용과 업로드용은 다릅니다</h2>
     <p>사진관에서 이력서 사진을 찍으면 보통 인화본과 파일을 함께 줍니다. 파일은 인화를 염두에 둔 고해상도라 300dpi 기준 반명함이면 354×472픽셀 정도, 실제로는 그보다 훨씬 큰 경우가 많습니다.</p>
     <p>종이 이력서에 붙일 때는 그 원본이 맞지만, 온라인 지원에는 그대로 쓸 필요가 없습니다. 화면에서만 보이는 사진이라 권장 크기에 맞춰 줄여도 보기에 차이가 없고, 오히려 업로드가 빠릅니다. <strong>원본 파일은 지우지 말고 보관</strong>하셨다가 지원처마다 다시 변환해 쓰시면 됩니다.</p>
 
     <h2>이 도구가 맞춰주는 것</h2>
-    <p>위쪽 규격란에 지원 사이트가 안내한 픽셀 크기와 용량을 넣으시면 그 값에 맞춰 변환합니다. 안내가 없다면 반명함 비율인 354×472픽셀로 두셔도 대부분 무난합니다.</p>
+    <p>위쪽에서 지원하는 사이트를 고르면 그 사이트의 권장 크기로 비율에 맞춰 잘라 줄입니다. 목록에 없는 곳이라면 "직접 입력"을 고르고 안내된 픽셀과 용량을 넣으세요. 안내가 없다면 반명함 비율인 354×472픽셀로 두셔도 대부분 무난합니다. 다른 제출처 규격은 <a href="/photo-size-guide">증명사진 규격 한눈에 보기</a>에 모아두었습니다.</p>
     <p>다만 사진의 내용은 판단하지 못합니다. 배경이 깔끔한 단색인지, 정면을 보고 있는지, 너무 오래된 사진은 아닌지는 직접 보셔야 합니다. 특히 몇 년 전에 찍은 사진을 계속 돌려 쓰다가 면접장에서 인상이 달라 보이는 경우가 있으니, 외모가 많이 바뀌었다면 새로 찍으시는 편이 낫습니다.</p>
 
 <h2>업로드가 안 될 때 확인하는 순서</h2>
@@ -128,7 +152,7 @@
     </ol>
 
     <h2>등록 전에</h2>
-    <p>사진을 아예 요구하지 않는 공고도 늘고 있습니다. 넣기 전에 해당 공고가 사진을 필수로 두는지 먼저 확인하시고, 사람인의 파일 규격은 <a href="https://www.saramin.co.kr/zf_user/help/help-word/view?idx=524" rel="nofollow noopener" target="_blank">이력서 사진 등록 안내</a>에서 보실 수 있습니다. 사이트별 제한은 예고 없이 바뀔 수 있으니 올리기 직전에 다시 확인하세요.</p>
+    <p>사진을 아예 요구하지 않는 공고도 늘고 있습니다. 넣기 전에 해당 공고가 사진을 필수로 두는지 먼저 확인하세요. 사이트별 기준은 <a href="https://www.saramin.co.kr/zf_user/help/help-word/view?idx=524" rel="nofollow noopener" target="_blank">사람인 이력서 사진 등록 안내</a>, <a href="https://www.jobkorea.co.kr/service/user/tool/photo" rel="nofollow noopener" target="_blank">잡코리아 사진 도구</a>, <a href="https://lab.incruit.com/editor/photo/" rel="nofollow noopener" target="_blank">인크루트 사진 편집기</a>에서 보실 수 있습니다. 사이트별 제한은 예고 없이 바뀔 수 있으니 올리기 직전에 다시 확인하세요.</p>
   </article>
 
   <div class="related-tools">
@@ -143,6 +167,8 @@
   <p>규격은 기관·공고마다 다르고 수시로 바뀔 수 있습니다. 제출 전 반드시 해당 기관의 최신 공지를 확인하세요. (정보 확인 기준: 2026년 9월)</p>
   <nav>
     <a href="/">전체 도구 보기</a>
+    <a href="/photo-size-guide">증명사진 규격표</a>
+    <a href="/passport-photo-rejections">여권사진 반려 사유</a>
     <a href="/about">사이트 소개·문의</a>
     <a href="/privacy">개인정보처리방침</a>
     <a href="/terms">이용약관</a>
@@ -152,9 +178,32 @@
 <canvas id="workCanvas" style="display:none"></canvas>
 <script src="/assets/converter.js"></script>
 <script>
-  window.PhotoConverter.init(() => ({
-    width: 300, height: 400, maxKB: 1000, format: 'image/jpeg', requireKB: false
-  }));
+  (function () {
+    const sel = document.getElementById('preset');
+    const box = document.getElementById('customInputs');
+    function cur() { return sel.options[sel.selectedIndex]; }
+    function paint() {
+      const o = cur();
+      const custom = o.value === 'custom';
+      if (box) box.style.display = custom ? 'flex' : 'none';
+      document.getElementById('rSize').textContent = custom ? '직접 입력' : o.dataset.w + '×' + o.dataset.h + 'px';
+      document.getElementById('rKb').textContent = custom ? '직접 입력' : o.dataset.kb + 'KB';
+      document.getElementById('rNote').textContent = o.dataset.note;
+    }
+    sel.addEventListener('change', paint);
+    paint();
+    window.__presetSpec = function () {
+      const o = cur();
+      if (o.value === 'custom') {
+        const w = parseInt(document.getElementById('cWidth').value, 10);
+        const h = parseInt(document.getElementById('cHeight').value, 10);
+        const kb = parseInt(document.getElementById('cKb').value, 10);
+        return { width: isNaN(w) ? null : w, height: isNaN(h) ? null : h, maxKB: isNaN(kb) ? null : kb, format: 'image/jpeg', requireKB: false };
+      }
+      return { width: +o.dataset.w, height: +o.dataset.h, maxKB: +o.dataset.kb, format: 'image/jpeg', requireKB: false };
+    };
+  })();
+  window.PhotoConverter.init(() => window.__presetSpec());
 </script>
 </body>
 </html>
